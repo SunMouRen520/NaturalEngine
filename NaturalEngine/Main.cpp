@@ -8,6 +8,9 @@
 #include <iostream>
 #include "Camera.h"
 
+#include "DrawableObjects/drawableObjects.h"
+#include "DrawableObjects/sceneElements.h"
+
 int main()
 {
 	// 相机的设置
@@ -22,11 +25,30 @@ int main()
 	window.camera = &camera;
 
 	
+	glm::vec3 fogColor(0.5, 0.6, 0.7);
+	glm::vec3 lightColor(255, 255, 230);
+	lightColor /= 255.0;
+
+	FrameBufferObject SceneFBO(Window::SCR_WIDTH, Window::SCR_HEIGHT);
+	glm::vec3 lightPosition, seed;
+	glm::mat4 proj = glm::perspective(glm::radians(camera.Zoom),(float)Window::SCR_WIDTH / (float)Window::SCR_HEIGHT, 5.f, 10000000.0f);
+	glm::vec3 lightDir = glm::vec3(-0.5, 0.5, 1.0);
+
+
+	// 每个场景对象都需要渲染这些东西
+	sceneElements scene;
+
+	scene.sceneFBO = &SceneFBO;
+
+
+	drawableObject::scene = &scene;
 
 	
 	// 主循环
 	while (window.continueLoop())
 	{
+		scene.lightDir = glm::normalize(scene.lightDir);
+		scene.lightPos = scene.lightDir * 1e6f + camera.Position;
 
 
 		window.swapBuffersAndPollEvents();

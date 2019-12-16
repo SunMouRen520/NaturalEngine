@@ -128,9 +128,11 @@
     <ClCompile Include="Compile\glad.c" />
     <ClCompile Include="Compile\stb_image.cpp" />
     <ClCompile Include="Compile\stb_image_write.cpp" />
+    <ClCompile Include="DrawableObjects\drawableObject.cpp" />
     <ClCompile Include="Engine\BaseShader.cpp" />
     <ClCompile Include="Engine\buffer.cpp" />
     <ClCompile Include="Engine\glError.cpp" />
+    <ClCompile Include="Engine\ScreenSpaceShader.cpp" />
     <ClCompile Include="Engine\Shader.cpp" />
     <ClCompile Include="Engine\texture.cpp" />
     <ClCompile Include="Engine\utils.cpp" />
@@ -139,14 +141,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="DrawableObjects\drawableObjects.h" />
     <ClInclude Include="DrawableObjects\sceneElements.h" />
     <ClInclude Include="Engine\BaseShader.h" />
     <ClInclude Include="Engine\buffer.h" />
     <ClInclude Include="Engine\glError.h" />
+    <ClInclude Include="Engine\ScreenSpaceShader.h" />
     <ClInclude Include="Engine\Shader.h" />
     <ClInclude Include="Engine\texture.h" />
     <ClInclude Include="Engine\utils.h" />
     <ClInclude Include="Engine\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\screen.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

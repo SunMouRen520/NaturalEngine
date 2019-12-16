@@ -25,6 +25,12 @@
     <Filter Include="头文件\DrawableObjects">
       <UniqueIdentifier>{f489e447-64b3-4e67-8c87-6c3f922355b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\DrawableObjects">
+      <UniqueIdentifier>{6f0c2e54-3937-4c36-8613-0407e06e7bc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{9185e19c-196d-4a15-8ec9-ced238a92b84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -60,6 +66,12 @@
     <ClCompile Include="Engine\buffer.cpp">
       <Filter>源文件\engine</Filter>
     </ClCompile>
+    <ClCompile Include="DrawableObjects\drawableObject.cpp">
+      <Filter>源文件\DrawableObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\ScreenSpaceShader.cpp">
+      <Filter>源文件\engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\utils.h">
@@ -89,5 +101,16 @@
     <ClInclude Include="DrawableObjects\sceneElements.h">
       <Filter>头文件\DrawableObjects</Filter>
     </ClInclude>
+    <ClInclude Include="DrawableObjects\drawableObjects.h">
+      <Filter>头文件\DrawableObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\ScreenSpaceShader.h">
+      <Filter>头文件\engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\screen.vert">
+      <Filter>Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>
