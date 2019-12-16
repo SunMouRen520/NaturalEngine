@@ -10,6 +10,8 @@
 
 #include "DrawableObjects/drawableObjects.h"
 #include "DrawableObjects/sceneElements.h"
+#include "DrawableObjects/SkyBox.h"
+
 
 int main()
 {
@@ -43,13 +45,18 @@ int main()
 
 	drawableObject::scene = &scene;
 
+	SkyBox skybox;
+
 	
 	// Ö÷Ñ­»·
 	while (window.continueLoop())
-	{
+	{		
 		scene.lightDir = glm::normalize(scene.lightDir);
 		scene.lightPos = scene.lightDir * 1e6f + camera.Position;
 
+		skybox.update();
+
+		skybox.draw();
 
 		window.swapBuffersAndPollEvents();
 	}

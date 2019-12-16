@@ -129,6 +129,7 @@
     <ClCompile Include="Compile\stb_image.cpp" />
     <ClCompile Include="Compile\stb_image_write.cpp" />
     <ClCompile Include="DrawableObjects\drawableObject.cpp" />
+    <ClCompile Include="DrawableObjects\SkyBox.cpp" />
     <ClCompile Include="Engine\BaseShader.cpp" />
     <ClCompile Include="Engine\buffer.cpp" />
     <ClCompile Include="Engine\glError.cpp" />
@@ -137,12 +138,19 @@
     <ClCompile Include="Engine\texture.cpp" />
     <ClCompile Include="Engine\utils.cpp" />
     <ClCompile Include="Engine\Window.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
     <ClInclude Include="DrawableObjects\drawableObjects.h" />
     <ClInclude Include="DrawableObjects\sceneElements.h" />
+    <ClInclude Include="DrawableObjects\SkyBox.h" />
     <ClInclude Include="Engine\BaseShader.h" />
     <ClInclude Include="Engine\buffer.h" />
     <ClInclude Include="Engine\glError.h" />
@@ -151,8 +159,17 @@
     <ClInclude Include="Engine\texture.h" />
     <ClInclude Include="Engine\utils.h" />
     <ClInclude Include="Engine\Window.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\imstb_rectpack.h" />
+    <ClInclude Include="imgui\imstb_textedit.h" />
+    <ClInclude Include="imgui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DrawableObjects\sky.frag" />
     <None Include="Shader\screen.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
