@@ -22,6 +22,9 @@
     <Filter Include="源文件\engine">
       <UniqueIdentifier>{a0ed18c6-3ff8-45a6-809c-fe0859664e6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\DrawableObjects">
+      <UniqueIdentifier>{f489e447-64b3-4e67-8c87-6c3f922355b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -82,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="Engine\buffer.h">
       <Filter>头文件\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawableObjects\sceneElements.h">
+      <Filter>头文件\DrawableObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

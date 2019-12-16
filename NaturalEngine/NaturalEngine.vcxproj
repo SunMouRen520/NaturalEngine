@@ -139,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="DrawableObjects\sceneElements.h" />
     <ClInclude Include="Engine\BaseShader.h" />
     <ClInclude Include="Engine\buffer.h" />
     <ClInclude Include="Engine\glError.h" />
