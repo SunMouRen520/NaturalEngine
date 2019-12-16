@@ -1,0 +1,13 @@
+﻿  glad.c
+  stb_image.cpp
+  stb_image_write.cpp
+  Window.cpp
+  Main.cpp
+  正在生成代码...
+Window.obj : error LNK2019: 无法解析的外部符号 _glfwInit，该符号在函数 "public: __thiscall Window::Window(int &,unsigned int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Window@@QAE@AAHIIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 中被引用
+Window.obj : error LNK2019: 无法解析的外部符号 _glfwTerminate，该符号在函数 "public: __thiscall Window::Window(int &,unsigned int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Window@@QAE@AAHIIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 中被引用
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets(720,5): error MSB6006: “link.exe”已退出，代码为 1120。
+Window.obj : error LNK2019: 无法解析的外部符号 _glfwWindowHint，该符号在函数 "public: __thiscall Window::Window(int &,unsigned int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Window@@QAE@AAHIIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 中被引用
+Window.obj : error LNK2019: 无法解析的外部符号 _glfwCreateWindow，该符号在函数 "public: __thiscall Window::Window(int &,unsigned int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Window@@QAE@AAHIIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 中被引用
+E:\MyProject\NaturalEngine\Libraries\glfw3.lib : warning LNK4272: 库计算机类型“x64”与目标计算机类型“x86”冲突
+E:\MyProject\NaturalEngine\Debug\NaturalEngine.exe : fatal error LNK1120: 4 个无法解析的外部命令
