@@ -52,6 +52,9 @@ int main()
 	SkyBox skybox;
 
 	gui.subscribe(&skybox);
+
+	ScreenSpaceShader PostProcessing("NaturalEngine/Shader/post_processing.frag");
+	ScreenSpaceShader fboVisualizer("NaturalEngine/Shader/visualizeFbo.frag");
 	
 	// 主循环
 	while (window.continueLoop())
@@ -84,6 +87,15 @@ int main()
 		{
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 		}
+
+		// 相机设置（视图矩阵）
+		glm::mat4 view = scene.cam->GetViewMatrix();
+		scene.projMatrix = glm::perspective(glm::radians(camera.Zoom), (float)Window::SCR_WIDTH / (float)Window::SCR_HEIGHT, 5.0f, 10000000.0f);
+
+		Shader& post = PostProcessing.getShader();
+		post.use();
+		post.setVec2("resolution", glm::vec2(1280, 720));
+		
 
 		skybox.draw();
 

@@ -172,5 +172,11 @@
     <None Include="Shader\sky.frag">
       <Filter>Shader</Filter>
     </None>
+    <None Include="Shader\post_processing.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\visualizeFbo.frag">
+      <Filter>Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

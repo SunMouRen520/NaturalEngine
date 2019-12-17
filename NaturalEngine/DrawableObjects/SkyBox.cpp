@@ -12,12 +12,14 @@ SkyBox::SkyBox()
 	skyBoxShader = new ScreenSpaceShader("NaturalEngine/Shader/sky.frag");
 	skyBoxFBO = new FrameBufferObject(Window::SCR_WIDTH, Window::SCR_HEIGHT);
 
-	SunsetPreset();
 	SunsetPreset1();
+	DefaultPreset();
 }
 
 SkyBox::~SkyBox()
 {
+	delete skyBoxFBO;
+	delete skyBoxShader;
 }
 
 void SkyBox::draw()
