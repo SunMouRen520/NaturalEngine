@@ -96,6 +96,9 @@
     <ClCompile Include="imgui\imgui_widgets.cpp">
       <Filter>源文件\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="DrawableObjects\GUI.cpp">
+      <Filter>源文件\DrawableObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\utils.h">
@@ -158,12 +161,15 @@
     <ClInclude Include="imgui\imstb_truetype.h">
       <Filter>源文件\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="DrawableObjects\GUI.h">
+      <Filter>头文件\DrawableObjects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\screen.vert">
       <Filter>Shader</Filter>
     </None>
-    <None Include="DrawableObjects\sky.frag">
+    <None Include="Shader\sky.frag">
       <Filter>Shader</Filter>
     </None>
   </ItemGroup>

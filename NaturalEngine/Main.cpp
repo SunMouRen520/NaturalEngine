@@ -11,7 +11,11 @@
 #include "DrawableObjects/drawableObjects.h"
 #include "DrawableObjects/sceneElements.h"
 #include "DrawableObjects/SkyBox.h"
+#include "DrawableObjects/GUI.h"
 
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_glfw.h"
+#include "imgui/imgui_impl_opengl3.h"
 
 int main()
 {
@@ -25,7 +29,7 @@ int main()
 	if (!sucess) return -1;
 
 	window.camera = &camera;
-
+	GUI gui(window);
 	
 	glm::vec3 fogColor(0.5, 0.6, 0.7);
 	glm::vec3 lightColor(255, 255, 230);
@@ -47,14 +51,39 @@ int main()
 
 	SkyBox skybox;
 
+	gui.subscribe(&skybox);
 	
 	// 主循环
 	while (window.continueLoop())
-	{		
+	{
 		scene.lightDir = glm::normalize(scene.lightDir);
 		scene.lightPos = scene.lightDir * 1e6f + camera.Position;
 
+		// 输入
+		float frametime = 1 / ImGui::GetIO().Framerate;
+		window.processInput(frametime);
+
+		gui.update();
 		skybox.update();
+
+		SceneFBO.bind();
+
+		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_BACK);
+
+		glClearColor(fogColor[0], fogColor[1], fogColor[2], 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		// 切换线框模式
+		if (scene.wireframe)
+		{
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		}
+		else
+		{
+			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+		}
 
 		skybox.draw();
 
