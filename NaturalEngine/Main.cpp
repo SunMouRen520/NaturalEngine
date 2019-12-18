@@ -53,8 +53,8 @@ int main()
 
 	gui.subscribe(&skybox);
 
-	ScreenSpaceShader PostProcessing("NaturalEngine/Shader/post_processing.frag");
-	ScreenSpaceShader fboVisualizer("NaturalEngine/Shader/visualizeFbo.frag");
+	ScreenSpaceShader PostProcessing("Shader/post_processing.frag");
+	ScreenSpaceShader fboVisualizer("Shader/visualizeFbo.frag");
 	
 	// Ö÷Ñ­»·
 	while (window.continueLoop())

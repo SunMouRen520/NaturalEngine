@@ -3,6 +3,25 @@
 #include <fstream>
 #include <sstream>
 
+BaseShader::BaseShader(const char * shaderPath)
+{
+	path = std::string(shaderPath);
+	std::string shaderCode = loadShaderFromFile(shaderPath);
+	const char* shaderString = shaderCode.c_str();
+
+	shadtype = getShaderType(shaderPath);
+	shad = glCreateShader(shadtype.type);
+	glShaderSource(shad, 1, &shaderString, NULL);
+	glCompileShader(shad);
+	checkCompileErrors(shad, shadtype.name.c_str(), getShaderName(shaderPath));
+}
+
+BaseShader::~BaseShader()
+{
+	//glDeleteShader(shad);
+}
+
+
 bool checkCompileErrors(unsigned int shader, std::string type, std::string shaderName)
 {
 	int success;
@@ -28,6 +47,40 @@ bool checkCompileErrors(unsigned int shader, std::string type, std::string shade
 
 	return success;
 }
+
+
+std::string BaseShader::loadShaderFromFile(const char * shaderPath)
+{
+	std::string shaderCode;
+	std::ifstream shaderFile;
+	//const char * shaderSource = 0;
+	shaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+
+	try
+	{
+		// 打开文件
+		shaderFile.open(shaderPath);
+
+
+		std::stringstream shaderStream;
+		// 将文件的缓冲区内容读入流
+		shaderStream << shaderFile.rdbuf();
+		// 关闭文件
+		shaderFile.close();
+		//shaderFile.clear();
+		// 将流转换为字符串
+		shaderCode = shaderStream.str();
+		//shaderSource = shaderCode.c_str();
+
+	}
+	catch (std::ifstream::failure e)
+	{
+		std::cout << "ERROR: SHADER  " << getShaderName(shaderPath) << "  FILE_NOT_SUCCESSFULLY_READ" << std::endl;
+	}
+
+	return shaderCode;
+}
+
 
 std::string getShaderName(const char * path)
 {
@@ -65,46 +118,5 @@ ShaderType getShaderType(const char * path)
 
 }
 
-BaseShader::BaseShader(const char * shaderPath)
-{
-	path = std::string(shaderPath);
-	std::string shaderCode = loadShaderFromFile(shaderPath);
-	const char* shaderString = shaderCode.c_str();
 
-	shadtype = getShaderType(shaderPath);
-	shad = glCreateShader(shadtype.type);
-	glShaderSource(shad, 1, &shaderString, NULL);
-	glCompileShader(shad);
-	checkCompileErrors(shad, shadtype.name.c_str(), getShaderName(shaderPath));
-}
 
-BaseShader::~BaseShader()
-{
-}
-
-std::string BaseShader::loadShaderFromFile(const char * shaderPath)
-{
-	std::string shaderCode;
-	std::ifstream shaderFile;
-	shaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
-
-	try
-	{
-		// 打开文件
-		shaderFile.open(shaderPath);
-		std::stringstream shaderStream;
-		// 将文件的缓冲区内容读入流
-		shaderStream << shaderFile.rdbuf();
-		// 关闭文件
-		shaderFile.close();
-		// 将流转换为字符串
-		shaderCode = shaderStream.str();
-
-	}
-	catch (std::ifstream::failure e)
-	{
-		std::cout << "ERROR: SHADER" << getShaderName(shaderPath) << "FILE_NOT_SUCCESSFULLY_READ" << std::endl;
-	}
-
-	return shaderCode;
-}

@@ -7,9 +7,11 @@ bool ScreenSpaceShader::initialized = false;
 ScreenSpaceShader::ScreenSpaceShader(const char * fragmentPath)
 {
 	initializeQuad();
+
+	//shad = new Shader("Shader/screen.vert", fragmentPath);
 	shad = new Shader("ScreenQuad_" + getShaderName(fragmentPath));
 
-	shad->attachShader(BaseShader("NaturalEngine/Shader/screen.vert"));
+	shad->attachShader(BaseShader("Shader/screen.vert"));
 	shad->attachShader(BaseShader(fragmentPath));
 
 	shad->linkProgram();

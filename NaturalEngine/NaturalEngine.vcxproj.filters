@@ -28,11 +28,11 @@
     <Filter Include="源文件\DrawableObjects">
       <UniqueIdentifier>{6f0c2e54-3937-4c36-8613-0407e06e7bc3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shader">
-      <UniqueIdentifier>{9185e19c-196d-4a15-8ec9-ced238a92b84}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\imgui">
       <UniqueIdentifier>{d47bc34a-ac0f-4058-affd-0a34602cbd4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Shaders">
+      <UniqueIdentifier>{48c59a98-e627-4ac9-a2c3-c774c32f23c2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +97,9 @@
       <Filter>源文件\imgui</Filter>
     </ClCompile>
     <ClCompile Include="DrawableObjects\GUI.cpp">
+      <Filter>源文件\DrawableObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawableObjects\CloudsModel.cpp">
       <Filter>源文件\DrawableObjects</Filter>
     </ClCompile>
   </ItemGroup>
@@ -164,19 +167,22 @@
     <ClInclude Include="DrawableObjects\GUI.h">
       <Filter>头文件\DrawableObjects</Filter>
     </ClInclude>
+    <ClInclude Include="DrawableObjects\CloudsModel.h">
+      <Filter>头文件\DrawableObjects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shader\screen.vert">
-      <Filter>Shader</Filter>
+    <None Include="..\Shader\post_processing.frag">
+      <Filter>头文件\Shaders</Filter>
     </None>
-    <None Include="Shader\sky.frag">
-      <Filter>Shader</Filter>
+    <None Include="..\Shader\screen.vert">
+      <Filter>头文件\Shaders</Filter>
     </None>
-    <None Include="Shader\post_processing.frag">
-      <Filter>Shader</Filter>
+    <None Include="..\Shader\sky.frag">
+      <Filter>头文件\Shaders</Filter>
     </None>
-    <None Include="Shader\visualizeFbo.frag">
-      <Filter>Shader</Filter>
+    <None Include="..\Shader\visualizeFbo.frag">
+      <Filter>头文件\Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>
