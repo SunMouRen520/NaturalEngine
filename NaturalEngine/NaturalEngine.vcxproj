@@ -173,10 +173,15 @@
     <ClInclude Include="imgui\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Shader\clouds_post.frag" />
+    <None Include="..\Shader\perlinworley.comp" />
     <None Include="..\Shader\post_processing.frag" />
     <None Include="..\Shader\screen.vert" />
     <None Include="..\Shader\sky.frag" />
     <None Include="..\Shader\visualizeFbo.frag" />
+    <None Include="..\Shader\volumetric_clouds.comp" />
+    <None Include="..\Shader\weather.comp" />
+    <None Include="..\Shader\worley.comp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

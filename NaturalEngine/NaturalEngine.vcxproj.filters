@@ -184,5 +184,20 @@
     <None Include="..\Shader\visualizeFbo.frag">
       <Filter>头文件\Shaders</Filter>
     </None>
+    <None Include="..\Shader\perlinworley.comp">
+      <Filter>头文件\Shaders</Filter>
+    </None>
+    <None Include="..\Shader\worley.comp">
+      <Filter>头文件\Shaders</Filter>
+    </None>
+    <None Include="..\Shader\volumetric_clouds.comp">
+      <Filter>头文件\Shaders</Filter>
+    </None>
+    <None Include="..\Shader\weather.comp">
+      <Filter>头文件\Shaders</Filter>
+    </None>
+    <None Include="..\Shader\clouds_post.frag">
+      <Filter>头文件\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
