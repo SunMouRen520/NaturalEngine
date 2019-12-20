@@ -132,6 +132,7 @@
     <ClCompile Include="DrawableObjects\drawableObject.cpp" />
     <ClCompile Include="DrawableObjects\GUI.cpp" />
     <ClCompile Include="DrawableObjects\SkyBox.cpp" />
+    <ClCompile Include="DrawableObjects\VolumetricClouds.cpp" />
     <ClCompile Include="Engine\BaseShader.cpp" />
     <ClCompile Include="Engine\buffer.cpp" />
     <ClCompile Include="Engine\glError.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="DrawableObjects\GUI.h" />
     <ClInclude Include="DrawableObjects\sceneElements.h" />
     <ClInclude Include="DrawableObjects\SkyBox.h" />
+    <ClInclude Include="DrawableObjects\VolumetricClouds.h" />
     <ClInclude Include="Engine\BaseShader.h" />
     <ClInclude Include="Engine\buffer.h" />
     <ClInclude Include="Engine\glError.h" />

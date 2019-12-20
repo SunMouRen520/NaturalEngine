@@ -27,6 +27,61 @@ f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(
 f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(135): warning C4305: “=”: 从“double”到“float”截断
 f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(136): warning C4305: “=”: 从“double”到“float”截断
 f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(142): warning C4305: “=”: 从“double”到“float”截断
+  SkyBox.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(126): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(127): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(133): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(150): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\skybox.cpp(48): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\skybox.cpp(112): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  VolumetricClouds.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(126): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(127): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(133): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(150): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(31): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(43): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(109): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(18): warning C4101: “t2”: 未引用的局部变量
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(18): warning C4101: “t1”: 未引用的局部变量
   Main.cpp
 f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(126): warning C4305: “=”: 从“double”到“T”截断
           with
@@ -52,4 +107,5 @@ f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(133): warning C4244: �
 f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(150): warning C4305: “参数”: 从“double”到“float”截断
 f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
   正在生成代码...
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
   NaturalEngine.vcxproj -> F:\MyGameSDK\OpenGL-NaturalEngine\x64\Debug\NaturalEngine.exe

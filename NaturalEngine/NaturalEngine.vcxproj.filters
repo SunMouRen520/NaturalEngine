@@ -102,6 +102,9 @@
     <ClCompile Include="DrawableObjects\CloudsModel.cpp">
       <Filter>源文件\DrawableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="DrawableObjects\VolumetricClouds.cpp">
+      <Filter>源文件\DrawableObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\utils.h">
@@ -168,6 +171,9 @@
       <Filter>头文件\DrawableObjects</Filter>
     </ClInclude>
     <ClInclude Include="DrawableObjects\CloudsModel.h">
+      <Filter>头文件\DrawableObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawableObjects\VolumetricClouds.h">
       <Filter>头文件\DrawableObjects</Filter>
     </ClInclude>
   </ItemGroup>
