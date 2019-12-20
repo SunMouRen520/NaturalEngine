@@ -56,7 +56,7 @@ vec3 getSun(const vec3 d,float powExp)
 vec4 colorCubeMap(vec3 endPos, const vec3 d)
 {
 	// background sky
-	vec3 col = mix(shyColorBottom, skyColorTop, clamp(1 - exp(8.5 - 17. * clamp(normalize(d).y * 0.5 + 0.5, 0.0, 1.0)), 0.0, 1.0));
+	vec3 col = mix(skyColorBottom, skyColorTop, clamp(1 - exp(8.5 - 17. * clamp(normalize(d).y * 0.5 + 0.5, 0.0, 1.0)), 0.0, 1.0));
 
 	col += getSun(d, 350.0);
 
@@ -77,8 +77,8 @@ void main()
 	vec4 v = vec4(0.0);
 
 	// compute background color 
-	vec3 cubMapEndPos;
-	raySphereintersectionSkyMap(worldDir, 0.5, cubMapEndPos);
+	vec3 cubeMapEndPos;
+	raySphereintersectionSkyMap(worldDir, 0.5, cubeMapEndPos);
 
 	vec4 bg = colorCubeMap(cubeMapEndPos, worldDir);
 	vec2 red = vec2(1.0);

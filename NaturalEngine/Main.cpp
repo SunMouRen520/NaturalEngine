@@ -43,6 +43,7 @@ int main()
 
 	// 每个场景对象都需要渲染这些东西
 	sceneElements scene;
+	scene.cam = &camera;
 
 	scene.sceneFBO = &SceneFBO;
 
@@ -91,6 +92,9 @@ int main()
 		// 相机设置（视图矩阵）
 		glm::mat4 view = scene.cam->GetViewMatrix();
 		scene.projMatrix = glm::perspective(glm::radians(camera.Zoom), (float)Window::SCR_WIDTH / (float)Window::SCR_HEIGHT, 5.0f, 10000000.0f);
+
+		scene.cam->invertPitch();
+		
 
 		Shader& post = PostProcessing.getShader();
 		post.use();

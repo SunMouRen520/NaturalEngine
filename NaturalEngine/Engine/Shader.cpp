@@ -46,7 +46,7 @@ void Shader::linkProgram()
 	if (checkCompileErrors(ID, "PROGRAM", ""))
 	{
 		linked = true;
-		std::cout << "PROGRAM" << name << " CORRECTLY LINKED" << std::endl;
+		std::cout << "PROGRAM  " << name << " CORRECTLY LINKED" << std::endl;
 
 		while (!shaders.empty())
 		{

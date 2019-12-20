@@ -100,7 +100,7 @@ ShaderType getShaderType(const char * path)
 	const size_t last_slash_idx = type.find_last_of(".");
 	if (std::string::npos != last_slash_idx)
 	{
-		type.erase(0, last_slash_idx);
+		type.erase(0, last_slash_idx + 1);
 	}
 
 	if (type == "vert")

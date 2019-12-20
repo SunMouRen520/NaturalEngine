@@ -183,6 +183,10 @@ public:
 		if (Zoom > MAX_FOV)
 			Zoom = MAX_FOV;
 	}
+	void invertPitch() {
+		this->Pitch = -Pitch;
+		UpdateCameraVector();
+	}
 
 private:
 	// 以相机的欧拉角计算前向量（更新）

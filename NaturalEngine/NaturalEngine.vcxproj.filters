@@ -31,8 +31,8 @@
     <Filter Include="源文件\imgui">
       <UniqueIdentifier>{d47bc34a-ac0f-4058-affd-0a34602cbd4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Shaders">
-      <UniqueIdentifier>{48c59a98-e627-4ac9-a2c3-c774c32f23c2}</UniqueIdentifier>
+    <Filter Include="头文件\Shader">
+      <UniqueIdentifier>{ca422d29-d462-4889-8477-13e77d430037}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -178,32 +178,32 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Shader\post_processing.frag">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\clouds_post.frag">
+      <Filter>头文件\Shader</Filter>
     </None>
-    <None Include="..\Shader\screen.vert">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\perlinworley.comp">
+      <Filter>头文件\Shader</Filter>
     </None>
-    <None Include="..\Shader\sky.frag">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\post_processing.frag">
+      <Filter>头文件\Shader</Filter>
     </None>
-    <None Include="..\Shader\visualizeFbo.frag">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\screen.vert">
+      <Filter>头文件\Shader</Filter>
     </None>
-    <None Include="..\Shader\perlinworley.comp">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\sky.frag">
+      <Filter>头文件\Shader</Filter>
     </None>
-    <None Include="..\Shader\worley.comp">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\visualizeFbo.frag">
+      <Filter>头文件\Shader</Filter>
     </None>
-    <None Include="..\Shader\volumetric_clouds.comp">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\volumetric_clouds.comp">
+      <Filter>头文件\Shader</Filter>
     </None>
-    <None Include="..\Shader\weather.comp">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\weather.comp">
+      <Filter>头文件\Shader</Filter>
     </None>
-    <None Include="..\Shader\clouds_post.frag">
-      <Filter>头文件\Shaders</Filter>
+    <None Include="Shader\worley.comp">
+      <Filter>头文件\Shader</Filter>
     </None>
   </ItemGroup>
 </Project>
