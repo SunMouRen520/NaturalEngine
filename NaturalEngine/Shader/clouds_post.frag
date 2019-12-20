@@ -89,7 +89,7 @@ void main()
 		dTuv *= density / float(SAMPLES);
 
 		//vec3 cloRays = texture(emissions, uv.xy).rgb * 0.4;
-		vec3 cloRays = gaussianBlur(emissions, uv.xy).rgb * 0.4;
+		vec3 colRays = gaussianBlur(emissions, uv.xy).rgb * 0.4;
 		for(int i = 0; i < SAMPLES; i++)
 		{
 			uv -= dTuv;

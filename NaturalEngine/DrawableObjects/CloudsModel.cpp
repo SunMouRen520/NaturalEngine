@@ -66,7 +66,7 @@ void CloudsModel::generateWeatherMap()
 	weatherShader->setVec3("seed", scene->seed);
 	weatherShader->setFloat("perlinFrequency", perlinFrequency);
 	std::cout << "computing weather!" << std::endl;
-	glDispatchCompute(INT_CEIL(1027, 8), INT_CEIL(1024, 8), 1);
+	glDispatchCompute(INT_CEIL(1024, 8), INT_CEIL(1024, 8), 1);
 	std::cout << "weather computed!!" << std::endl;
 
 	glMemoryBarrier(GL_SHADER_IMAGE_ACCESS_BARRIER_BIT);

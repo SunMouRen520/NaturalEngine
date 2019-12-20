@@ -1,4 +1,3 @@
-#pragma once
 #ifndef SCENELEMENTS_H
 #define SCENELEMENTS_H
 

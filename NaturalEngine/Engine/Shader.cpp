@@ -27,7 +27,7 @@ Shader * Shader::attachShader(BaseShader s)
 	if (!isCompute)
 	{
 		glAttachShader(ID, s.getShad());
-		if (s.getName() == "COMPURE")
+		if (s.getName() == "COMPURE  ")
 			isCompute = true;
 		this->shaders.push_back(s.getShad());
 	}
@@ -43,7 +43,7 @@ void Shader::linkProgram()
 {
 	glLinkProgram(ID);
 
-	if (checkCompileErrors(ID, "PROGRAM", ""))
+	if (checkCompileErrors(ID, "PROGRAM  ", ""))
 	{
 		linked = true;
 		std::cout << "PROGRAM  " << name << " CORRECTLY LINKED" << std::endl;

@@ -16,7 +16,7 @@ struct colorPreset
 class SkyBox : public drawableObject
 {
 public:
-	//friend class VolumetricClouds;
+	friend class VolumetricClouds;
 	SkyBox();
 	~SkyBox();
 

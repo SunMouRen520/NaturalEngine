@@ -37,7 +37,7 @@ float noise(vec3 x)
 		f.z);
 }
 
-float cells(vec3 p, float cellout)
+float cells(vec3 p, float cellCount)
 {
 	vec3 pCell = p * cellCount;
 	float d = 1.0e10;
@@ -76,6 +76,11 @@ vec4 permute(vec4 x)
 vec4 fade(vec4 t)
 {
 	return (t * t * t) * (t * (t * vec4(6) - vec4(15)) + vec4(10));
+}
+
+vec4 taylorInvSqrt(vec4 r)
+{
+	return vec4(1.79284291400159) - vec4(0.85373472095314) * r;
 }
 
 float glmPerlin4D(vec4 Position, vec4 rep)
@@ -283,13 +288,12 @@ vec4 stackable3DNoise(ivec3 pixel)
 	float worleyNoise2 = (1.0 - worleyNoise3D(coord, cellCount * 4.0));
 	float worleyNoise3 = (1.0 - worleyNoise3D(coord, cellCount * 8.0));
 	float worleyNoise4 = (1.0 - worleyNoise3D(coord, cellCount * 16.0));
-	//float worleyNoise5 = (1.0f - Tileable3dNoise::WorleyNoise(coord, cellCount * 32));	
-	//cellCount=2 -> half the frequency of texel, we should not go further (with cellCount = 32 and texture size = 64)
+	
 
 	// Three frequency of Worley FBM noise
 	float worleyFBM0 = worleyNoise1*0.625f + worleyNoise2*0.25f + worleyNoise3*0.125f;
 	float worleyFBM1 = worleyNoise2*0.625f + worleyNoise3*0.25f + worleyNoise4*0.125f;
-	//float worleyFBM2 = worleyNoise3*0.625f + worleyNoise4*0.25f + worleyNoise5*0.125f;
+
 	float worleyFBM2 = worleyNoise3*0.75f + worleyNoise4*0.25f; 
 	// cellCount=4 -> worleyNoise5 is just noise due to sampling frequency=texel frequency. So only take into account 2 frequencies for FBM
 

@@ -5,6 +5,10 @@
 #include <GLFW/glfw3.h>
 
 #include "Engine/Window.h"
+#include "Engine/Shader.h"
+#include "Engine/ScreenSpaceShader.h"
+#include "Engine/texture.h"
+
 #include <iostream>
 #include "Camera.h"
 
@@ -12,6 +16,8 @@
 #include "DrawableObjects/sceneElements.h"
 #include "DrawableObjects/SkyBox.h"
 #include "DrawableObjects/GUI.h"
+#include "DrawableObjects/CloudsModel.h"
+#include "DrawableObjects/VolumetricClouds.h"
 
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
@@ -36,23 +42,34 @@ int main()
 	lightColor /= 255.0;
 
 	FrameBufferObject SceneFBO(Window::SCR_WIDTH, Window::SCR_HEIGHT);
-	glm::vec3 lightPosition, seed;
+	glm::vec3 lightPosition;
+	glm::vec3 seed(0.0, 0.0, 0.0);
 	glm::mat4 proj = glm::perspective(glm::radians(camera.Zoom),(float)Window::SCR_WIDTH / (float)Window::SCR_HEIGHT, 5.f, 10000000.0f);
 	glm::vec3 lightDir = glm::vec3(-0.5, 0.5, 1.0);
 
 
 	// 每个场景对象都需要渲染这些东西
-	sceneElements scene;
+	sceneElements  scene;
 	scene.cam = &camera;
-
 	scene.sceneFBO = &SceneFBO;
-
+	scene.lightColor = lightColor;
+	scene.lightPos = lightPosition;
+	scene.lightDir = lightDir;
+	scene.seed = seed;
+	scene.fogColor = fogColor;
+	scene.projMatrix = proj;
 
 	drawableObject::scene = &scene;
 
 	SkyBox skybox;
+	CloudsModel cloudsModel(&scene, &skybox);
+
+	VolumetricClouds volumetricClouds(Window::SCR_WIDTH, Window::SCR_HEIGHT, &cloudsModel);
+	// 分辨率较低的帧缓冲区，所以渲染的更快
+	VolumetricClouds reflectionVolumetricClouds(1280, 720, &cloudsModel);
 
 	gui.subscribe(&skybox);
+	gui.subscribe(&cloudsModel);
 
 	ScreenSpaceShader PostProcessing("Shader/post_processing.frag");
 	ScreenSpaceShader fboVisualizer("Shader/visualizeFbo.frag");
@@ -69,6 +86,7 @@ int main()
 
 		gui.update();
 		skybox.update();
+		cloudsModel.update();
 
 		SceneFBO.bind();
 
@@ -100,9 +118,13 @@ int main()
 		post.use();
 		post.setVec2("resolution", glm::vec2(1280, 720));
 		
+		scene.sceneFBO->bind();
 
+		volumetricClouds.draw();
 		skybox.draw();
+		gui.draw();
 
+		// glfw: 交换缓冲区，和IO事件
 		window.swapBuffersAndPollEvents();
 	}
 

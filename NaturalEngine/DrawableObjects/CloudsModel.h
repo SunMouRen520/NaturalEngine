@@ -12,6 +12,8 @@
 class CloudsModel : public drawableObject
 {
 public:
+	friend class VolumetricClouds;
+
 	CloudsModel(sceneElements * scene, SkyBox * sky);
 	~CloudsModel();
 
@@ -41,7 +43,8 @@ public:
 	glm::vec3 seed, oldSeed;
 	unsigned int perlinTex, worley32, weatherTex;
 
-	sceneElements * scene;
+	
 	SkyBox * sky;
+	sceneElements * scene;
 
 };
