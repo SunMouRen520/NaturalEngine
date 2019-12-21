@@ -105,6 +105,12 @@
     <ClCompile Include="DrawableObjects\VolumetricClouds.cpp">
       <Filter>源文件\DrawableObjects</Filter>
     </ClCompile>
+    <ClCompile Include="DrawableObjects\Water.cpp">
+      <Filter>源文件\DrawableObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawableObjects\Terrain.cpp">
+      <Filter>源文件\DrawableObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\utils.h">
@@ -176,6 +182,12 @@
     <ClInclude Include="DrawableObjects\VolumetricClouds.h">
       <Filter>头文件\DrawableObjects</Filter>
     </ClInclude>
+    <ClInclude Include="DrawableObjects\Water.h">
+      <Filter>头文件\DrawableObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawableObjects\Terrain.h">
+      <Filter>头文件\DrawableObjects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\clouds_post.frag">
@@ -203,6 +215,12 @@
       <Filter>头文件\Shader</Filter>
     </None>
     <None Include="Shader\worley.comp">
+      <Filter>头文件\Shader</Filter>
+    </None>
+    <None Include="Shader\water.vert">
+      <Filter>头文件\Shader</Filter>
+    </None>
+    <None Include="Shader\water.frag">
       <Filter>头文件\Shader</Filter>
     </None>
   </ItemGroup>

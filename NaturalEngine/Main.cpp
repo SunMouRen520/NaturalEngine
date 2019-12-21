@@ -18,6 +18,7 @@
 #include "DrawableObjects/GUI.h"
 #include "DrawableObjects/CloudsModel.h"
 #include "DrawableObjects/VolumetricClouds.h"
+#include "DrawableObjects/Water.h"
 
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
@@ -61,6 +62,12 @@ int main()
 
 	drawableObject::scene = &scene;
 
+	int gridLength = 120;
+
+
+	float waterHeight = 120;
+	Water water(glm::vec2(0.0, 0.0), gridLength, waterHeight);
+
 	SkyBox skybox;
 	CloudsModel cloudsModel(&scene, &skybox);
 
@@ -70,6 +77,7 @@ int main()
 
 	gui.subscribe(&skybox);
 	gui.subscribe(&cloudsModel);
+	gui.subscribe(&water);
 
 	ScreenSpaceShader PostProcessing("Shader/post_processing.frag");
 	ScreenSpaceShader fboVisualizer("Shader/visualizeFbo.frag");
@@ -84,6 +92,7 @@ int main()
 		float frametime = 1 / ImGui::GetIO().Framerate;
 		window.processInput(frametime);
 
+		// 更新
 		gui.update();
 		skybox.update();
 		cloudsModel.update();
@@ -111,6 +120,8 @@ int main()
 		glm::mat4 view = scene.cam->GetViewMatrix();
 		scene.projMatrix = glm::perspective(glm::radians(camera.Zoom), (float)Window::SCR_WIDTH / (float)Window::SCR_HEIGHT, 5.0f, 10000000.0f);
 
+		
+
 		scene.cam->invertPitch();
 		
 		ScreenSpaceShader::disableTest();
@@ -136,7 +147,7 @@ int main()
 		volumetricClouds.draw();
 		skybox.draw();
 		
-		
+		water.draw();
 
 		// 混合体积云的渲染与地形和应用一些后期处理
 		// 屏幕上的画
