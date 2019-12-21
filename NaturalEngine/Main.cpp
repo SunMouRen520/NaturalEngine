@@ -113,15 +113,54 @@ int main()
 
 		scene.cam->invertPitch();
 		
+		ScreenSpaceShader::disableTest();
+
+		reflectionVolumetricClouds.draw();
 
 		Shader& post = PostProcessing.getShader();
 		post.use();
 		post.setVec2("resolution", glm::vec2(1280, 720));
+
+		post.setSampler2D("cloudTEX", reflectionVolumetricClouds.getCloudsRawTexture(), 1);
+		PostProcessing.draw();
+
+		ScreenSpaceShader::enableTest();
 		
+		// 绘制地形和水域
 		scene.sceneFBO->bind();
+
+
+		// 禁用四轴渲染测试
+		ScreenSpaceShader::disableTest();
 
 		volumetricClouds.draw();
 		skybox.draw();
+		
+		
+
+		// 混合体积云的渲染与地形和应用一些后期处理
+		// 屏幕上的画
+		unbindCurrentFrameBuffer();
+		glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+
+		post.use();
+		post.setVec2("resolution", glm::vec2(Window::SCR_WIDTH, Window::SCR_HEIGHT));
+		post.setVec3("cameraPosition", scene.cam->Position);
+		post.setSampler2D("screenTexture", SceneFBO.tex, 0);
+		post.setSampler2D("cloudTEX", volumetricClouds.getCloudsTexture(), 1);
+		post.setSampler2D("depthTex", SceneFBO.depthTex, 2);
+		post.setSampler2D("cloudDistance", volumetricClouds.getCloudsTexture(VolumetricClouds::cloudDistance), 3);
+
+		post.setBool("wireframe", scene.wireframe);
+
+		post.setMat4("VP", scene.projMatrix * view);
+		PostProcessing.draw();
+
+		// 视觉纹理
+		Shader& fboVisualizerShader = fboVisualizer.getShader();
+		fboVisualizerShader.use();
+		fboVisualizerShader.setSampler2D("fboTex", volumetricClouds.getCloudsTexture(), 0);
+
 		gui.draw();
 
 		// glfw: 交换缓冲区，和IO事件
