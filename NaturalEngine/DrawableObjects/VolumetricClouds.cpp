@@ -2,7 +2,7 @@
 
 #define TIMETO(CODE,TASK) t1 = glfwGetTime(); CODE; t2 = glfwGetTime(); std::cout << "Time to" + std::string(TASK) + ":" << (t2 - t1) * 1e3 << "ms" << std::endl;
 
-VolumetricClouds::VolumetricClouds(int SW, int SH, CloudsModel * model)
+VolumetricClouds::VolumetricClouds(int SW, int SH, CloudsModel * model) : SCR_WIDTH(SW), SCR_HEIGHT(SH), model(model)
 {
 	cloudsFBO = new TextureSet(SW, SH, 4);
 	cloudsPostProcessingFBO = new FrameBufferObject(Window::SCR_WIDTH, Window::SCR_HEIGHT, 2);

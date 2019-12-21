@@ -2,7 +2,7 @@
 #include <glad/glad.h>
 #include "Engine/texture.h"
 
-CloudsModel::CloudsModel(sceneElements * scene, SkyBox * sky)
+CloudsModel::CloudsModel(sceneElements * scene, SkyBox * sky) : scene(scene), sky(sky)
 {
 	initVariables();
 	initShaders();
