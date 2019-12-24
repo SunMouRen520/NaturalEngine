@@ -184,6 +184,10 @@
     <None Include="Shader\post_processing.frag" />
     <None Include="Shader\screen.vert" />
     <None Include="Shader\sky.frag" />
+    <None Include="Shader\terrain.frag" />
+    <None Include="Shader\terrain.tcs" />
+    <None Include="Shader\terrain.tes" />
+    <None Include="Shader\terrain.vert" />
     <None Include="Shader\visualizeFbo.frag" />
     <None Include="Shader\volumetric_clouds.comp" />
     <None Include="Shader\water.frag" />

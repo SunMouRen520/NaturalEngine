@@ -223,5 +223,17 @@
     <None Include="Shader\water.frag">
       <Filter>头文件\Shader</Filter>
     </None>
+    <None Include="Shader\terrain.vert">
+      <Filter>头文件\Shader</Filter>
+    </None>
+    <None Include="Shader\terrain.frag">
+      <Filter>头文件\Shader</Filter>
+    </None>
+    <None Include="Shader\terrain.tcs">
+      <Filter>头文件\Shader</Filter>
+    </None>
+    <None Include="Shader\terrain.tes">
+      <Filter>头文件\Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>
