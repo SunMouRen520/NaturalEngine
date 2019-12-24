@@ -25,6 +25,10 @@
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
 
+#include <functional>
+#include <stb_image.h>
+#include <vector>
+
 int main()
 {
 	// 相机的设置
@@ -77,11 +81,11 @@ int main()
 	// 分辨率较低的帧缓冲区，所以渲染的更快
 	VolumetricClouds reflectionVolumetricClouds(1280, 720, &cloudsModel);
 
+	gui.subscribe(&terrain);
 	gui.subscribe(&skybox);
 	gui.subscribe(&cloudsModel);
 	gui.subscribe(&water);
-	gui.subscribe(&terrain);
-
+	
 	ScreenSpaceShader PostProcessing("Shader/post_processing.frag");
 	ScreenSpaceShader fboVisualizer("Shader/visualizeFbo.frag");
 	
@@ -91,15 +95,17 @@ int main()
 		scene.lightDir = glm::normalize(scene.lightDir);
 		scene.lightPos = scene.lightDir * 1e6f + camera.Position;
 
+		//glFlush();
+
 		// 输入
 		float frametime = 1 / ImGui::GetIO().Framerate;
 		window.processInput(frametime);
 
 		// 更新
 		terrain.updateTilesPositions();
-		gui.update();
-		skybox.update();
 		cloudsModel.update();
+		gui.update();
+		skybox.update();		
 
 		SceneFBO.bind();
 
@@ -161,9 +167,10 @@ int main()
 
 		// 吸引到水中折射缓冲物体
 		water.bindRefractionFBO();
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_CULL_FACE);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		terrain.up = -1.0;
 		terrain.draw();
@@ -209,6 +216,4 @@ int main()
 		window.swapBuffersAndPollEvents();
 	}
 
-
-	return 0;
 }

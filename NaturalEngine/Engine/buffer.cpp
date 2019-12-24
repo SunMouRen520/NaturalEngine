@@ -73,8 +73,8 @@ unsigned int createDepthTextureAttachment(int width, int height)
 	glBindTexture(GL_TEXTURE_2D, texture);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32, width, height, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);	
 
 	glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, texture, 0);
 
@@ -87,7 +87,7 @@ unsigned int createDepthBufferAttachment(int width, int height)
 	glGenRenderbuffers(1, &depthBuffer);
 	glBindRenderbuffer(GL_RENDERBUFFER, depthBuffer);
 	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, width, height);
-	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_COMPONENT, GL_RENDERBUFFER, depthBuffer);
+	glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthBuffer);
 	return depthBuffer;
 }
 
@@ -114,7 +114,7 @@ FrameBufferObject::FrameBufferObject(int W_, int H_)
 	nColorAttachments = 1;
 }
 
-FrameBufferObject::FrameBufferObject(int W_, int H_, int numColorAttachments)
+FrameBufferObject::FrameBufferObject(int W_, int H_, const int nColorAttachments)
 {
 	this->W = W_;
 	this->H = H_;
@@ -122,15 +122,15 @@ FrameBufferObject::FrameBufferObject(int W_, int H_, int numColorAttachments)
 
 	this->tex = NULL;
 	this->depthTex = createDepthTextureAttachment(W, H);
-	this->colorAttachments = createColorAttachments(W, H, numColorAttachments);
-	this->nColorAttachments = numColorAttachments;
+	this->colorAttachments = createColorAttachments(W, H, nColorAttachments);
+	this->nColorAttachments = nColorAttachments;
 
-	unsigned int * colorAttachmentsFlag = new unsigned int[numColorAttachments];
-	for (unsigned int i = 0; i < numColorAttachments; i++)
+	unsigned int * colorAttachmentsFlag = new unsigned int[nColorAttachments];
+	for (unsigned int i = 0; i < nColorAttachments; i++)
 	{
 		colorAttachmentsFlag[i] = GL_COLOR_ATTACHMENT0 + i;
 	}
-	glDrawBuffers(numColorAttachments, colorAttachmentsFlag);
+	glDrawBuffers(nColorAttachments, colorAttachmentsFlag);
 	delete colorAttachmentsFlag;
 }
 

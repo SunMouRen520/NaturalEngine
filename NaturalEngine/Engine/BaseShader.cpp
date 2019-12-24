@@ -60,8 +60,6 @@ std::string BaseShader::loadShaderFromFile(const char * shaderPath)
 	{
 		// 打开文件
 		shaderFile.open(shaderPath);
-
-
 		std::stringstream shaderStream;
 		// 将文件的缓冲区内容读入流
 		shaderStream << shaderFile.rdbuf();

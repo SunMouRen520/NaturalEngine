@@ -8,14 +8,14 @@ Camera * Window::camera = 0;
 bool Window::keyBools[10] = { false,false, false, false, false, false, false, false, false, false };
 bool Window::wireframe = false;
 bool Window::firstMouse = true;
-float Window::lastX = SCR_WIDTH / 2;
-float Window::lastY = SCR_HEIGHT / 2;
+float Window::lastX = SCR_WIDTH / 2.0f;
+float Window::lastY = SCR_HEIGHT / 2.0f;
 bool Window::mouseCursorDisable = true;
 
 Window::Window(int & success, unsigned int SCR_W, unsigned int SCR_H, std::string name) :name (name)
 {
-	SCR_WIDTH = SCR_W;
-	SCR_HEIGHT = SCR_H;
+	Window::SCR_WIDTH = SCR_W;
+	Window::SCR_HEIGHT = SCR_H;
 	success = 1;
 
 	// glfw: ≥ı ºªØ≈‰÷√

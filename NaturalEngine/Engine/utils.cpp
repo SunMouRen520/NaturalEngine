@@ -5,7 +5,7 @@ void initializePlaneVAO(const int res, const int width, GLuint * planeVAO, GLuin
 {
 	// const int res = 3
 	const int nPoints = res * res;
-	const int size = nPoints * 8;
+	const int size = nPoints * 3 + nPoints * 3 + nPoints * 2;
 	float * vertices = new float[size];
 	for (int i = 0; i < res; i++)
 	{

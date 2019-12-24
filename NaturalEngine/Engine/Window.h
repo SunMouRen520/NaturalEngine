@@ -22,19 +22,19 @@ public:
 	{
 		glfwTerminate();
 	}
+	
 
+	// 如果不关闭窗口，就一直循环
+	bool continueLoop()
+	{
+		return !glfwWindowShouldClose(this->window);
+	}
 
 	// 把这个放在主循环的最后
 	void swapBuffersAndPollEvents()
 	{
 		glfwSwapBuffers(this->window);
 		glfwPollEvents();
-	}
-
-	// 如果不关闭窗口，就一直循环
-	bool continueLoop()
-	{
-		return !glfwWindowShouldClose(this->window);
 	}
 
 public:

@@ -48,7 +48,7 @@ unsigned int LoadCubmap(vector<std::string> faces)
 	glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
 
 	int width, heigth, nrChannels;
-	for (int i = 0; i < faces.size(); i++)
+	for (unsigned int i = 0; i < faces.size(); i++)
 	{
 		unsigned char* data = stbi_load(faces[i].c_str(), &width, &heigth, &nrChannels, 0);
 		if (data)
@@ -98,8 +98,8 @@ unsigned int GenerateTexture3D(int w, int h, int d)
 
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);	
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
 	glTexImage3D(GL_TEXTURE_3D, 0, GL_RGBA8, w, h, d, 0, GL_RGBA, GL_FLOAT, NULL);
