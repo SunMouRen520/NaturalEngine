@@ -19,7 +19,7 @@ uniform sampler2D depthMap;
 
 out vec4 FragColor;
 
-const float distFactor = 0.05;
+const float disFactor = 0.05;
 
 float Random3D(in vec3 st)
 {
