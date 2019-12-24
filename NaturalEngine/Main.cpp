@@ -19,7 +19,7 @@
 #include "DrawableObjects/CloudsModel.h"
 #include "DrawableObjects/VolumetricClouds.h"
 #include "DrawableObjects/Water.h"
-
+#include "DrawableObjects/Terrain.h"
 
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
@@ -64,10 +64,11 @@ int main()
 	drawableObject::scene = &scene;
 
 	int gridLength = 120;
-
+	Terrain terrain(gridLength);
 
 	float waterHeight = 120;
 	Water water(glm::vec2(0.0, 0.0), gridLength, waterHeight);
+	terrain.waterPtr = &water;
 
 	SkyBox skybox;
 	CloudsModel cloudsModel(&scene, &skybox);
@@ -79,6 +80,7 @@ int main()
 	gui.subscribe(&skybox);
 	gui.subscribe(&cloudsModel);
 	gui.subscribe(&water);
+	gui.subscribe(&terrain);
 
 	ScreenSpaceShader PostProcessing("Shader/post_processing.frag");
 	ScreenSpaceShader fboVisualizer("Shader/visualizeFbo.frag");
@@ -94,6 +96,7 @@ int main()
 		window.processInput(frametime);
 
 		// 更新
+		terrain.updateTilesPositions();
 		gui.update();
 		skybox.update();
 		cloudsModel.update();
@@ -121,34 +124,61 @@ int main()
 		glm::mat4 view = scene.cam->GetViewMatrix();
 		scene.projMatrix = glm::perspective(glm::radians(camera.Zoom), (float)Window::SCR_WIDTH / (float)Window::SCR_HEIGHT, 5.0f, 10000000.0f);
 
-		
+		// 吸引到水中反射缓冲物体
+		water.bindReflectionFBO();
+		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_CULL_FACE);
+		glCullFace(GL_BACK);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		scene.cam->invertPitch();
+		scene.cam->Position.y -= 2 * (scene.cam->Position.y - water.getHeight());
+
+		terrain.up = 1.0;
+		terrain.draw();
+
+		FrameBufferObject const& reflFBO = water.getReFlectionFBO();
 		
 		ScreenSpaceShader::disableTest();
 
 		reflectionVolumetricClouds.draw();
 
+		// 重新绑定反射缓冲区
+		water.bindReflectionFBO();
+
 		Shader& post = PostProcessing.getShader();
 		post.use();
 		post.setVec2("resolution", glm::vec2(1280, 720));
-
+		post.setSampler2D("screenTexture", reflFBO.tex, 0);
+		post.setSampler2D("depthTex", reflFBO.depthTex, 2);
 		post.setSampler2D("cloudTEX", reflectionVolumetricClouds.getCloudsRawTexture(), 1);
 		PostProcessing.draw();
-
+				
 		ScreenSpaceShader::enableTest();
+
+		scene.cam->invertPitch();
+		scene.cam->Position.y += 2 * abs(scene.cam->Position.y - water.getHeight());
+
+		// 吸引到水中折射缓冲物体
+		water.bindRefractionFBO();
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glEnable(GL_DEPTH_TEST);
+		glEnable(GL_CULL_FACE);
+
+		terrain.up = -1.0;
+		terrain.draw();
 		
 		// 绘制地形和水域
 		scene.sceneFBO->bind();
-
+		terrain.draw();
+		water.draw();
 
 		// 禁用四轴渲染测试
 		ScreenSpaceShader::disableTest();
 
 		volumetricClouds.draw();
 		skybox.draw();
-		
-		water.draw();
+				
 
 		// 混合体积云的渲染与地形和应用一些后期处理
 		// 屏幕上的画

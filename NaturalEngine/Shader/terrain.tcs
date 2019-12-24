@@ -39,7 +39,7 @@ float InterpolatedNoise(int ind, float x, float y)
 	int integer_y = int(floor(y));
 	float fractional_Y = fract(y);
 	
-	vec2 randomInput = vec2(integer_x, integer_Y);
+	vec2 randomInput = vec2(integer_x, integer_y);
 
 	float a = Random2D(randomInput);
 	float b = Random2D(randomInput + vec2(1.0, 0.0));
