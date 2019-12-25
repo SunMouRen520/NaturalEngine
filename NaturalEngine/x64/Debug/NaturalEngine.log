@@ -1,14 +1,4 @@
-﻿  Main.cpp
-f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(126): warning C4305: “=”: 从“double”到“T”截断
-          with
-          [
-              T=float
-          ]
-f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(127): warning C4305: “=”: 从“double”到“T”截断
-          with
-          [
-              T=float
-          ]
+﻿  CloudsModel.cpp
 f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
           with
           [
@@ -19,11 +9,285 @@ f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: �
           [
               T=float
           ]
-f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(133): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(150): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(132): warning C4305: “=”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(134): warning C4305: “=”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(135): warning C4305: “=”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(136): warning C4305: “=”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\cloudsmodel.cpp(142): warning C4305: “=”: 从“double”到“float”截断
+  GUI.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\gui.cpp(37): warning C4305: “参数”: 从“double”到“float”截断
+  SkyBox.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\skybox.cpp(48): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\skybox.cpp(112): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  Terrain.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.h(77): warning C4244: “初始化”: 从“double”转换到“const int”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.cpp(24): warning C4305: “=”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.cpp(25): warning C4305: “=”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.cpp(73): warning C4552: ”!=“: 未使用表达式结果
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.cpp(89): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.cpp(105): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.cpp(131): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.cpp(178): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  VolumetricClouds.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(31): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(43): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(109): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(18): warning C4101: “t2”: 未引用的局部变量
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\volumetricclouds.cpp(18): warning C4101: “t1”: 未引用的局部变量
+  Water.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.h(77): warning C4244: “初始化”: 从“double”转换到“const int”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\water.cpp(70): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  drawableObject.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+  ScreenSpaceShader.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
+  Window.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\window.cpp(113): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\window.cpp(114): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\window.cpp(118): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\window.cpp(119): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\window.cpp(130): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  buffer.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
+f:\mygamesdk\opengl-naturalengine\naturalengine\engine\buffer.cpp(129): warning C4018: “<”: 有符号/无符号不匹配
+  Main.cpp
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(128): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(129): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(130): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(131): warning C4305: “=”: 从“double”到“T”截断
+          with
+          [
+              T=float
+          ]
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(135): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(152): warning C4305: “参数”: 从“double”到“float”截断
 f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
 f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.h(77): warning C4244: “初始化”: 从“double”转换到“const int”，可能丢失数据
 f:\mygamesdk\opengl-naturalengine\naturalengine\main.cpp(74): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
 f:\mygamesdk\opengl-naturalengine\naturalengine\main.cpp(268): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+  正在生成代码...
 f:\mygamesdk\opengl-naturalengine\naturalengine\main.cpp(423): warning C4715: “main010”: 不是所有的控件路径都返回值
   NaturalEngine.vcxproj -> F:\MyGameSDK\OpenGL-NaturalEngine\x64\Debug\NaturalEngine.exe

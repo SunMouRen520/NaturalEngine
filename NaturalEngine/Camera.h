@@ -48,7 +48,7 @@ public:
 	Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) :Front(glm::vec3(0.0f, 0.0f, -5.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
 	{
 		Position = position;
-		Up = up;
+		WorldUp = up;
 		Yaw = yaw;
 		Pitch = pitch;
 		UpdateCameraVector();
@@ -58,7 +58,7 @@ public:
 	Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.0f, 0.0f, -0.1f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
 	{
 		Position = glm::vec3(posX,posY,posZ);
-		Up = glm::vec3(upX,upY,upZ);
+		WorldUp = glm::vec3(upX,upY,upZ);
 		Yaw = yaw;
 		Pitch = pitch;
 		UpdateCameraVector();
@@ -93,7 +93,7 @@ public:
 		}
 	}
 
-	float Randon2D(glm::vec2 st)
+	float Random2D(glm::vec2 st)
 	{
 		return glm::fract(glm::sin(glm::dot(st, glm::vec2(12.9898f, 78.233f))) * 43758.5453123f);
 	}
@@ -105,20 +105,22 @@ public:
 		float integer_y = float(y);
 		float fractional_y = glm::fract(y);
 		glm::vec2 randomInput = glm::vec2(integer_x, integer_y);
-		float a = Randon2D(randomInput);
-		float b = Randon2D(randomInput + glm::vec2(1.0f, 0.0f));
-		float c = Randon2D(randomInput + glm::vec2(0.0f, 1.0f));
-		float d = Randon2D(randomInput + glm::vec2(1.0f, 1.0f));
-
+		float a = Random2D(randomInput);
+		float b = Random2D(randomInput + glm::vec2(1.0f, 0.0f));
+		float c = Random2D(randomInput + glm::vec2(0.0f, 1.0f));
+		float d = Random2D(randomInput + glm::vec2(1.0f, 1.0f));
+	
 		glm::vec2 w = glm::vec2(fractional_x, fractional_y);
 		w = w * w * w * (10.0f + w * (-15.0f + 6.0f * w));
 		float k0 = a,
 			k1 = b - a,
 			k2 = c - a,
 			k3 = d - c - b + a;
-
+	
 		return k0 + k1 * w.x + k2 * w.y + k3 * w.x * w.y;
 	}
+
+	
 
 	float perlin(glm::vec2 st, int octaves, float freq, float gDispFactor)
 	{
@@ -132,7 +134,7 @@ public:
 		float total = 0.0,
 			frequency = 0.005 * freq,
 			amplitude = gDispFactor;
-		for (int i = 0; i < octaves; i++)
+		for (int i = 0; i < octaves; ++i)
 		{
 			frequency *= 2.0;
 			amplitude *= persistence;
@@ -189,7 +191,7 @@ public:
 	}
 
 private:
-	// 以相机的欧拉角计算前向量（更新）
+	 // 以相机的欧拉角计算前向量（更新）
 	void UpdateCameraVector()
 	{
 		// 计算新的前向量
@@ -198,12 +200,14 @@ private:
 		front.y = sin(glm::radians(Pitch));
 		front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
 		Front = glm::normalize(front);
-
+	
 		// 还要重新计算右和向上向量
 		Right = glm::normalize(glm::cross(Front, WorldUp));	 // 将向量归一化，因为你向上或向下看的次数越多，它们的长度就越接近0，这会导致运动变慢。
-
+	
 		Up = glm::normalize(glm::cross(Right, Front));
 	}
+
+
 
 };
 
