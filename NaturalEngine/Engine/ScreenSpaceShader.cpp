@@ -17,10 +17,6 @@ ScreenSpaceShader::ScreenSpaceShader(const char * fragmentPath)
 	shad->linkProgram();
 }
 
-ScreenSpaceShader::~ScreenSpaceShader()
-{
-}
-
 void ScreenSpaceShader::draw()
 {
 	ScreenSpaceShader::drawQuad();
@@ -31,6 +27,12 @@ void ScreenSpaceShader::drawQuad()
 	glBindVertexArray(quadVAO);
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
+
+ScreenSpaceShader::~ScreenSpaceShader()
+{
+}
+
+
 
 void ScreenSpaceShader::initializeQuad()
 {

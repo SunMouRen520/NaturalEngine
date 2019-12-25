@@ -12,13 +12,13 @@ Shader::~Shader()
 	glDeleteProgram(ID);
 }
 
-Shader::Shader(std::string name, const char * computeShader): name(name)
+Shader::Shader(std::string name, const char * computeShaderPath): name(name)
 {
 	linked = false;
 	isCompute = false;
 	ID = glCreateProgram();
 
-	this->attachShader(BaseShader(computeShader));
+	this->attachShader(BaseShader(computeShaderPath));
 	this->linkProgram();
 }
 

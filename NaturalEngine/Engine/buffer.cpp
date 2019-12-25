@@ -155,7 +155,7 @@ TextureSet::TextureSet(int W, int H, int num)
 	{
 		nTextures = num;
 		texture = new unsigned int[num];
-		for (int i = 0; i < num; i++)
+		for (int i = 0; i < num; ++i)
 		{
 			texture[i] = GenerateTexture2D(W, H);
 		}
@@ -179,7 +179,7 @@ unsigned int TextureSet::getColorAttachmentTex(int i)
 
 void TextureSet::bind()
 {
-	for (int i = 0; i < nTextures; i++)
+	for (int i = 0; i < nTextures; ++i)
 	{
 		BindTexture2D(texture[i], i);
 	}

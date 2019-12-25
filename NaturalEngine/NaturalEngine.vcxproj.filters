@@ -31,8 +31,8 @@
     <Filter Include="源文件\imgui">
       <UniqueIdentifier>{d47bc34a-ac0f-4058-affd-0a34602cbd4a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Shader">
-      <UniqueIdentifier>{ca422d29-d462-4889-8477-13e77d430037}</UniqueIdentifier>
+    <Filter Include="源文件\Shader">
+      <UniqueIdentifier>{8e933654-3ebc-4e7f-befb-3170dc73d622}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -191,49 +191,49 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Shader\clouds_post.frag">
-      <Filter>头文件\Shader</Filter>
+      <Filter>源文件\Shader</Filter>
     </None>
     <None Include="Shader\perlinworley.comp">
-      <Filter>头文件\Shader</Filter>
+      <Filter>源文件\Shader</Filter>
     </None>
     <None Include="Shader\post_processing.frag">
-      <Filter>头文件\Shader</Filter>
+      <Filter>源文件\Shader</Filter>
     </None>
     <None Include="Shader\screen.vert">
-      <Filter>头文件\Shader</Filter>
+      <Filter>源文件\Shader</Filter>
     </None>
     <None Include="Shader\sky.frag">
-      <Filter>头文件\Shader</Filter>
-    </None>
-    <None Include="Shader\visualizeFbo.frag">
-      <Filter>头文件\Shader</Filter>
-    </None>
-    <None Include="Shader\volumetric_clouds.comp">
-      <Filter>头文件\Shader</Filter>
-    </None>
-    <None Include="Shader\weather.comp">
-      <Filter>头文件\Shader</Filter>
-    </None>
-    <None Include="Shader\worley.comp">
-      <Filter>头文件\Shader</Filter>
-    </None>
-    <None Include="Shader\water.vert">
-      <Filter>头文件\Shader</Filter>
-    </None>
-    <None Include="Shader\water.frag">
-      <Filter>头文件\Shader</Filter>
-    </None>
-    <None Include="Shader\terrain.vert">
-      <Filter>头文件\Shader</Filter>
+      <Filter>源文件\Shader</Filter>
     </None>
     <None Include="Shader\terrain.frag">
-      <Filter>头文件\Shader</Filter>
+      <Filter>源文件\Shader</Filter>
     </None>
     <None Include="Shader\terrain.tcs">
-      <Filter>头文件\Shader</Filter>
+      <Filter>源文件\Shader</Filter>
     </None>
     <None Include="Shader\terrain.tes">
-      <Filter>头文件\Shader</Filter>
+      <Filter>源文件\Shader</Filter>
+    </None>
+    <None Include="Shader\terrain.vert">
+      <Filter>源文件\Shader</Filter>
+    </None>
+    <None Include="Shader\visualizeFbo.frag">
+      <Filter>源文件\Shader</Filter>
+    </None>
+    <None Include="Shader\volumetric_clouds.comp">
+      <Filter>源文件\Shader</Filter>
+    </None>
+    <None Include="Shader\water.frag">
+      <Filter>源文件\Shader</Filter>
+    </None>
+    <None Include="Shader\water.vert">
+      <Filter>源文件\Shader</Filter>
+    </None>
+    <None Include="Shader\weather.comp">
+      <Filter>源文件\Shader</Filter>
+    </None>
+    <None Include="Shader\worley.comp">
+      <Filter>源文件\Shader</Filter>
     </None>
   </ItemGroup>
 </Project>

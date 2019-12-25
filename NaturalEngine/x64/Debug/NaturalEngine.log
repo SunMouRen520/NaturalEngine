@@ -24,4 +24,6 @@ f:\mygamesdk\opengl-naturalengine\naturalengine\camera.h(150): warning C4305: �
 f:\mygamesdk\opengl-naturalengine\naturalengine\engine\screenspaceshader.h(19): warning C4227: 使用了记时错误: 忽略引用上的限定符
 f:\mygamesdk\opengl-naturalengine\naturalengine\drawableobjects\terrain.h(77): warning C4244: “初始化”: 从“double”转换到“const int”，可能丢失数据
 f:\mygamesdk\opengl-naturalengine\naturalengine\main.cpp(74): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\main.cpp(268): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+f:\mygamesdk\opengl-naturalengine\naturalengine\main.cpp(423): warning C4715: “main010”: 不是所有的控件路径都返回值
   NaturalEngine.vcxproj -> F:\MyGameSDK\OpenGL-NaturalEngine\x64\Debug\NaturalEngine.exe

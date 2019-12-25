@@ -17,7 +17,7 @@ void VolumetricClouds::draw()
 {
 	float t1, t2;
 
-	for(int i = 0; i < cloudsFBO->getNTextures(); i++)
+	for(int i = 0; i < cloudsFBO->getNTextures(); ++i)
 	{
 		BindTexture2D(cloudsFBO->getColorAttachmentTex(i), i);
 	}
