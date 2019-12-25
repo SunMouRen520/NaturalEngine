@@ -35,7 +35,7 @@ Terrain::Terrain(int gl)
 		->attachShader("Shader/terrain.tcs")
 		->attachShader("Shader/terrain.tes")
 		->attachShader("Shader/terrain.frag")
-		->linkProgram();
+		->linkPrograms();
 
 	// 确保网格长度
 	this->gridLength = gl + (gl + 1) % 2;
@@ -80,16 +80,44 @@ void Terrain::draw()
 	glm::mat4 gWorld = modelMatrix;
 	glm::mat4 gVP = se->projMatrix * se->cam->GetViewMatrix();
 
+	//shad->use();
+	//shad->setVec3("gEyeWorldPos", se->cam->Position);
+	//shad->setMat4("gWorld", gWorld);
+	//shad->setMat4("gVp", gVP);
+	//shad->setFloat("gDispFactor", dispFactor);
+	//
+	//float waterHeight = (waterPtr ? waterPtr->getModelMatrix()[3][1] : 100.0);
+	//glm::vec4 clipPlane(0.0, 1.0, 0.0, - waterHeight);
+	//
+	//shad->setVec4("clipPlane", clipPlane * up);
+	//shad->setVec3("u_LightColor", se->lightColor);
+	//shad->setVec3("u_LightPosition", se->lightPos);
+	//shad->setVec3("u_ViewPosition", se->cam->Position);
+	//shad->setVec3("fogColor", se->fogColor);
+	//shad->setVec3("rockColor", rockColor);
+	//shad->setVec3("seed", se->seed);
+	//
+	//shad->setInt("octaves", octaves);
+	//shad->setFloat("freq", frequency);
+	//shad->setFloat("u_grassCoverage", grassCoverage);
+	//shad->setFloat("waterHeight", waterHeight);
+	//shad->setFloat("tessMultiplier", tessMultiplier);
+	//shad->setFloat("fogFalloff", fogFalloff * 1.e-6);
+	//shad->setFloat("power", power);
+	//
+	//shad->setBool("normals", true);
+	//shad->setBool("drawFog", Terrain::drawFog);
+
+
 	shad->use();
-	shad->setVec3("gEyeWorldPs", se->cam->Position);
+	shad->setVec3("gEyeWorldPos", se->cam->Position);
 	shad->setMat4("gWorld", gWorld);
-	shad->setMat4("gVp", gVP);
+	shad->setMat4("gVP", gVP);
 	shad->setFloat("gDispFactor", dispFactor);
 
 	float waterHeight = (waterPtr ? waterPtr->getModelMatrix()[3][1] : 100.0);
-	glm::vec4 clipPlane(0.0, 1.0, 0.0, - waterHeight);
-
-	shad->setVec4("clipPlane", clipPlane * up);
+	glm::vec4 clipPlane(0.0, 1.0, 0.0, -waterHeight);
+	shad->setVec4("clipPlane", clipPlane*up);
 	shad->setVec3("u_LightColor", se->lightColor);
 	shad->setVec3("u_LightPosition", se->lightPos);
 	shad->setVec3("u_ViewPosition", se->cam->Position);
@@ -102,7 +130,7 @@ void Terrain::draw()
 	shad->setFloat("u_grassCoverage", grassCoverage);
 	shad->setFloat("waterHeight", waterHeight);
 	shad->setFloat("tessMultiplier", tessMultiplier);
-	shad->setFloat("fogFalloff", fogFalloff * 1.e-6);
+	shad->setFloat("fogFalloff", fogFalloff*1.e-6);
 	shad->setFloat("power", power);
 
 	shad->setBool("normals", true);

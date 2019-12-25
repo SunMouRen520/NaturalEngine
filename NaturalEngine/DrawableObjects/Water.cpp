@@ -11,7 +11,7 @@ Water::Water(glm::vec2 position, float scale, float height) : scale(scale),heigh
 	shad = new Shader("WaterShader");
 	shad->attachShader("Shader/water.frag");
 	shad->attachShader("Shader/water.vert");
-	shad->linkProgram();
+	shad->linkPrograms();
 
 	glm::mat4 identity;
 	glm::mat4 scaleMatrix = glm::scale(identity, glm::vec3(scale, scale, scale));

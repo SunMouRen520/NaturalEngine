@@ -207,7 +207,7 @@ void main()
 	vec3 lightDir = normalize(u_LightPosition - position.xyz);
 	float diffuseFactor = max(0.0, dot(lightDir, norm.rgb));
 	float diffuseConst = 0.5;
-	vec3 diffuse = diffuseFactor * diffuseConst * u_LightPosition;
+	vec3 diffuse = diffuseFactor * diffuseConst * u_LightColor;
 
 	// º∆À„æµ√Ê∑¥…‰
 	float specularFactor = 1.5f;

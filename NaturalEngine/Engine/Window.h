@@ -1,76 +1,77 @@
 #pragma once
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <camera.h>
 #include <iostream>
-#include "Camera.h"
 
 
 
 class Window
 {
 public:
+	//initializer
 	//初始化
-	Window(int &success, unsigned int SCR_W, unsigned int SCR_H, std::string name = "NaturalEngine OpenGL");
+	Window(int& success, unsigned int SCR_WIDTH = 1600, unsigned int SCR_HEIGHT = 900, std::string name = "TerrainEngine OpenGL");
 	~Window();
-	GLFWwindow *window;
-	GLFWwindow *getwindow() const { return window; }
+	GLFWwindow * w;
+	GLFWwindow * getWindow() const { return w; }
 
-	// 输入处理
-	void processInput(float frameTime);
+	void processInput(float frameTime); //input handler 输入处理
 
-	void terminate()
-	{
-		glfwTerminate();
-	}
-	
-
-	// 如果不关闭窗口，就一直循环
-	bool continueLoop()
-	{
-		return !glfwWindowShouldClose(this->window);
-	}
-
-	// 把这个放在主循环的最后
-	void swapBuffersAndPollEvents()
-	{
-		glfwSwapBuffers(this->window);
-		glfwPollEvents();
-	}
-
-public:
-	static Camera *camera;
+	// screen settings
 	// 屏幕设置
 	static unsigned int SCR_WIDTH;
 	static unsigned int SCR_HEIGHT;
 
+	void terminate() {
+		glfwTerminate();
+	}
+
+	bool isWireframeActive() {
+		return Window::wireframe;
+	}
+
+	// return if the main loop must continue
+	// 如果主循环必须继续，则返回
+	bool continueLoop() {
+		return !glfwWindowShouldClose(this->w);
+	}
+
+	//put this at the end of the main
+	// 把这个放在main的最后
+	void swapBuffersAndPollEvents() {
+		glfwSwapBuffers(this->w);
+		glfwPollEvents();
+	}
+
+	static Camera * camera;
+
 private:
-	// 回调
-	static void framebuffer_size_callbacke(GLFWwindow* window, int width, int heigth);
+	int oldState, newState;
+	int gladLoader(); // set mouse input and load opengl functions   设置鼠标输入并加载opengl函数
+
+	static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 	static void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 	static void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
-	// 设置鼠标并加载OpenGL函数
-	int gladLoader();
-
-private:
-	std::string name;
-	
-
-	
-
+	// avoid infinite key press
 	// 避免无限按键
 	static bool keyBools[10];
 
-	static bool mouseCursorDisable;
-	
+	static bool mouseCursorDisabled;
+
+	// wireframe mode
 	// 线框模式
 	static bool wireframe;
 
-	int oldState, newState;
-
-	// 避免在程序开始时鼠标就跳跃
-	static bool firstMouse;	// = true
+	//avoid to make the mouse to jump at the start of the program
+	// 避免使鼠标在程序开始时跳跃
+	static bool firstMouse;// = true;
 	static float lastX;
 	static float lastY;
 
+	std::string name;
 };
+
+

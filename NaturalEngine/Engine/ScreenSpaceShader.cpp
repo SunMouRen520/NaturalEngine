@@ -14,7 +14,7 @@ ScreenSpaceShader::ScreenSpaceShader(const char * fragmentPath)
 	shad->attachShader(BaseShader("Shader/screen.vert"));
 	shad->attachShader(BaseShader(fragmentPath));
 
-	shad->linkProgram();
+	shad->linkPrograms();
 }
 
 void ScreenSpaceShader::draw()

@@ -12,7 +12,7 @@ GUI::GUI(Window & w)
 	ImGui::CreateContext();
 	ImGui::StyleColorsDark();
 
-	ImGui_ImplGlfw_InitForOpenGL(w.getwindow(), true);
+	ImGui_ImplGlfw_InitForOpenGL(w.getWindow(), true);
 	ImGui_ImplOpenGL3_Init("#version 330");
 }
 

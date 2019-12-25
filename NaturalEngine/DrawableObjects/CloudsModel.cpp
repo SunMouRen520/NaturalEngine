@@ -61,7 +61,7 @@ void CloudsModel::setGui()
 
 void CloudsModel::generateWeatherMap()
 {
-	BindTexture2D(weatherTex, 0);
+	bindTexture2D(weatherTex, 0);
 	weatherShader->use();
 	weatherShader->setVec3("seed", scene->seed);
 	weatherShader->setFloat("perlinFrequency", perlinFrequency);
@@ -79,10 +79,10 @@ void CloudsModel::generateModelTextures()
 		//计算着色器
 		Shader comp("perlinWorley");
 		comp.attachShader("Shader/perlinworley.comp");
-		comp.linkProgram();
+		comp.linkPrograms();
 
 		// 制作贴图
-		this->perlinTex = GenerateTexture3D(128, 128, 128);
+		this->perlinTex = generateTexture3D(128, 128, 128);
 		// 计算
 		comp.use();
 		comp.setVec3("u_resolution", glm::vec3(128, 128, 128));
@@ -100,10 +100,10 @@ void CloudsModel::generateModelTextures()
 		// 计算着色器
 		Shader worley_git("worleyComp");
 		worley_git.attachShader("Shader/worley.comp");
-		worley_git.linkProgram();
+		worley_git.linkPrograms();
 
 		// 制作贴图
-		this->worley32 = GenerateTexture3D(32, 32, 32);
+		this->worley32 = generateTexture3D(32, 32, 32);
 
 		// 计算
 		worley_git.use();
@@ -117,7 +117,7 @@ void CloudsModel::generateModelTextures()
 	/////////////////
 	if (!weatherTex)
 	{
-		this->weatherTex = GenerateTexture2D(1024, 1024);
+		this->weatherTex = generateTexture2D(1024, 1024);
 
 		generateWeatherMap();
 
@@ -164,5 +164,5 @@ void CloudsModel::initShaders()
 	// 计算着色器
 	weatherShader = new Shader("weatherMap");
 	weatherShader->attachShader("Shader/weather.comp");
-	weatherShader->linkProgram();
+	weatherShader->linkPrograms();
 }

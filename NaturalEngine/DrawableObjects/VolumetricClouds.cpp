@@ -19,7 +19,7 @@ void VolumetricClouds::draw()
 
 	for(int i = 0; i < cloudsFBO->getNTextures(); ++i)
 	{
-		BindTexture2D(cloudsFBO->getColorAttachmentTex(i), i);
+		bindTexture2D(cloudsFBO->getColorAttachmentTex(i), i);
 	}
 
 	Shader & cloudsShader = *model->volumetricCloudShader;

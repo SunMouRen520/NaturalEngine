@@ -1,6 +1,6 @@
 #include "texture.h"
 
-unsigned int TextureFromFile(const char * path, const string & directory, bool gamma)
+unsigned int TextureFromFile(const char *path, const string &directory, bool gamma)
 {
 	string filename = string(path);
 	filename = directory + '/' + filename;
@@ -9,7 +9,8 @@ unsigned int TextureFromFile(const char * path, const string & directory, bool g
 	glGenTextures(1, &textureID);
 
 	int width, height, nrComponents;
-	unsigned char* data = stbi_load(filename.c_str(), &width, &height, &nrComponents, 0);
+	unsigned char *data = stbi_load(filename.c_str(), &width, &height, &nrComponents, 0);
+
 
 	if (data)
 	{
@@ -34,31 +35,30 @@ unsigned int TextureFromFile(const char * path, const string & directory, bool g
 	}
 	else
 	{
-		std::cout << "Texture failed to load at path" << std::endl;
+		std::cout << "Texture failed to load at path: " << path << std::endl;
 		stbi_image_free(data);
 	}
 
 	return textureID;
 }
 
-unsigned int LoadCubmap(vector<std::string> faces)
-{
+unsigned int loadCubemap(vector<std::string> faces) {
 	unsigned int textureID;
 	glGenTextures(1, &textureID);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
 
-	int width, heigth, nrChannels;
+	int width, height, nrChannels;
 	for (unsigned int i = 0; i < faces.size(); i++)
 	{
-		unsigned char* data = stbi_load(faces[i].c_str(), &width, &heigth, &nrChannels, 0);
+		unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
 		if (data)
 		{
-			glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, heigth, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+			glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 			stbi_image_free(data);
 		}
 		else
 		{
-			std::cout << "Cubemap texture faild to load at path" << std::endl;
+			std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
 			stbi_image_free(data);
 		}
 	}
@@ -71,8 +71,7 @@ unsigned int LoadCubmap(vector<std::string> faces)
 	return textureID;
 }
 
-unsigned int GenerateTexture2D(int w, int h)
-{
+unsigned int generateTexture2D(int w, int h) {
 	unsigned int tex_output;
 	glGenTextures(1, &tex_output);
 	glActiveTexture(GL_TEXTURE0);
@@ -89,8 +88,9 @@ unsigned int GenerateTexture2D(int w, int h)
 	return tex_output;
 }
 
-unsigned int GenerateTexture3D(int w, int h, int d)
-{
+
+
+unsigned int generateTexture3D(int w, int h, int d) {
 	unsigned int tex_output;
 	glGenTextures(1, &tex_output);
 	glActiveTexture(GL_TEXTURE0);
@@ -99,18 +99,19 @@ unsigned int GenerateTexture3D(int w, int h, int d)
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);	
+	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	//glTexStorage3D(GL_TEXTURE_3D, 0, GL_RGBA32F, w, h, d);
+	//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA32F, w, h, 0, GL_RGBA, GL_FLOAT, NULL);
 	glTexParameteri(GL_TEXTURE_3D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
 	glTexImage3D(GL_TEXTURE_3D, 0, GL_RGBA8, w, h, d, 0, GL_RGBA, GL_FLOAT, NULL);
 	glGenerateMipmap(GL_TEXTURE_3D);
 	glBindImageTexture(0, tex_output, 0, GL_FALSE, 0, GL_WRITE_ONLY, GL_RGBA8);
 
-
 	return tex_output;
 }
 
-void BindTexture2D(unsigned int tex, int unit)
-{
+
+void bindTexture2D(unsigned int tex, int unit) {
 	glBindImageTexture(unit, tex, 0, GL_FALSE, 0, GL_WRITE_ONLY, GL_RGBA32F);
 }
