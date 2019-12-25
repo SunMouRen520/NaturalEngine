@@ -140,21 +140,42 @@ void Terrain::draw()
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, textures[0]);
 	shad->setInt("sand", 1);
-
+	
 	glActiveTexture(GL_TEXTURE2);
 	glBindTexture(GL_TEXTURE_2D, textures[1]);
 	shad->setInt("grass", 2);
-
+	
 	glActiveTexture(GL_TEXTURE3);
 	glBindTexture(GL_TEXTURE_2D, textures[2]);
 	shad->setInt("rock", 3);
-
+	
 	glActiveTexture(GL_TEXTURE4);
 	glBindTexture(GL_TEXTURE_2D, textures[3]);
 	shad->setInt("snow", 4);
-
-	shad->setSampler2D("grassl", textures[5], 5);
+	
+	shad->setSampler2D("grass1", textures[5], 5);
 	shad->setSampler2D("rockNormal", textures[4], 6);
+
+
+	//glActiveTexture(GL_TEXTURE1);
+	//glBindTexture(GL_TEXTURE_2D, textures[0]);
+	//shad->setInt("sand", 1);
+	//
+	//glActiveTexture(GL_TEXTURE2);
+	//glBindTexture(GL_TEXTURE_2D, textures[1]);
+	//shad->setInt("grass", 2);
+	//
+	//glActiveTexture(GL_TEXTURE3);
+	//glBindTexture(GL_TEXTURE_2D, textures[2]);
+	//shad->setInt("rock", 3);
+	//
+	//glActiveTexture(GL_TEXTURE4);
+	//glBindTexture(GL_TEXTURE_2D, textures[3]);
+	//shad->setInt("snow", 4);
+	//
+	//shad->setSampler2D("grass1", textures[5], 5);
+	//
+	//shad->setSampler2D("rockNormal", textures[4], 6);
 
 	int nIstances = positionVec.size();
 
