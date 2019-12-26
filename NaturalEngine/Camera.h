@@ -84,10 +84,10 @@ public:
 		case BACK:
 			Position -= Front * velocity;
 			break;
-		case LEFT:
+		case RIGHT:
 			Position += Right * velocity;
 			break;
-		case RIGHT:
+		case LEFT:
 			Position -= Right * velocity;
 			break;
 		}
